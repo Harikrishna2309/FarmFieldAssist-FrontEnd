@@ -1,13 +1,12 @@
 {
-    "header": {
-      "login": "Login",
-      "register": "Register",
-      "switch_language": "Switch to Tamil"
-    },
-    "home": {
-      "title": "Farming in India",
-      "description": "India is one of the world's largest agricultural producers, rich in resources and traditions.",
-      "details": "Explore the diverse crops, sustainable practices, and opportunities in Indian farming."
-    }
+  "header": {
+    "title": "Farm Field Assist",
+    "login": "Login",
+    "register": "Register"
+  },
+  "home": {
+    "title": "Welcome to Farm Field Assist",
+    "description": "Explore farming opportunities across India.",
+    "details": "Learn more about sustainable farming practices."
   }
-  
+}
