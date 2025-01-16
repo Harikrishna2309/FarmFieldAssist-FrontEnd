@@ -14,6 +14,24 @@
     "secondsecheading": "How agriculture is important to india",
     "secondseccontent": "Agriculture is the backbone of India, providing livelihood to nearly 60% of the population. It contributes significantly to the nation’s GDP and plays a vital role in ensuring food security. India’s rich agricultural heritage supports the economy through exports of crops like rice, wheat, and spices. Additionally, agriculture sustains rural development, employment, and industrial growth by supplying raw materials. It also preserves biodiversity and promotes sustainable practices. With advancements in technology and government initiatives, agriculture remains crucial in addressing poverty, improving living standards, and achieving self-reliance. The sector’s growth is essential for India’s overall progress and economic stability."
     
+  },
+  "register": {
+    "title": "Register",
+    "name": "Name",
+    "email": "Email",
+    "password": "Password",
+    "phone": "Phone",
+    "alter_phone": "Alternate Phone",
+    "cost": "Cost",
+    "age": "Age",
+    "role": "Role",
+    "select_role": "Select a Role",
+    "farmer": "Farmer",
+    "labourer": "Labourer",
+    "image": "Upload Profile Picture",
+    "submit": "Submit",
+    "success": "Registration successful!",
+    "error": "Registration failed. Please try again."
   }
   
   
