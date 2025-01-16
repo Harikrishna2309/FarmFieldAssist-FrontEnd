@@ -2,7 +2,8 @@ import React from "react";
 import ReactDOM from "react-dom/client";
 import "./index.css";
 import App from "./App";
-import "./config/i18n"; // Import the i18n configuration
+import "./config/i18n"; 
+import 'bootstrap/dist/css/bootstrap.min.css';
 import { I18nextProvider } from "react-i18next";
 import i18n from "./config/i18n";
 

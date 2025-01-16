@@ -4,9 +4,17 @@
     "login": "Login",
     "register": "Register"
   },
+  "footer": {
+    "copyright": "© 2025 Farm Field Assist. All Rights Reserved.",
+    "developedBy": "Developed by FarmFieldAssist Team"
+  },
   "home": {
     "title": "Welcome to Farm Field Assist",
-    "description": "Explore farming opportunities across India.",
-    "details": "Learn more about sustainable farming practices."
+    "bannercontent": "Welcome to Farm Field Assist, a platform designed to connect farmers and laborers seamlessly. We aim to address the challenges faced by farmers in finding reliable workers and laborers in securing nearby job opportunities. With Farm Field Assist, farmers can easily post job requirements, including details about work, duration, payment, and location, while laborers can explore these opportunities based on their preferences. The platform supports multiple languages, including Tamil, making it accessible to a wider audience. It also features a user-friendly registration process, detailed job listings, and location-based filtering through Google Maps. Additionally, Farm Field Assist facilitates direct communication between farmers and laborers, ensuring efficient collaboration. Join us today to simplify agricultural hiring and create better connections in the farming community.",
+    "secondsecheading": "How agriculture is important to india",
+    "secondseccontent": "Agriculture is the backbone of India, providing livelihood to nearly 60% of the population. It contributes significantly to the nation’s GDP and plays a vital role in ensuring food security. India’s rich agricultural heritage supports the economy through exports of crops like rice, wheat, and spices. Additionally, agriculture sustains rural development, employment, and industrial growth by supplying raw materials. It also preserves biodiversity and promotes sustainable practices. With advancements in technology and government initiatives, agriculture remains crucial in addressing poverty, improving living standards, and achieving self-reliance. The sector’s growth is essential for India’s overall progress and economic stability."
+    
   }
+  
+  
 }

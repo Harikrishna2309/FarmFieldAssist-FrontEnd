@@ -11,4 +11,17 @@
   .home p {
     line-height: 1.6;
   }
+  #homepage .heading{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  #homepage .img-full-col {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+  #homepage .text-align-justify{
+    text-align: justify;
+  }
   
