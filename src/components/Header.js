@@ -1,21 +1,37 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import { useTranslation } from "react-i18next";
 import { useNavigate } from "react-router-dom";
 import "../styles/Header.css";
+import ProfileModal from "../pages/ProfileModal"; // Import a Profile Modal for editing user details
 
 const Header = () => {
   const { t, i18n } = useTranslation();
   const navigate = useNavigate();
+  const [isLoggedIn, setIsLoggedIn] = useState(false);
+  const [showProfileModal, setShowProfileModal] = useState(false);
+
+  useEffect(() => {
+    const token = localStorage.getItem("token");
+    setIsLoggedIn(!!token); 
+  }, []);
 
   const switchLanguage = (lang) => {
     i18n.changeLanguage(lang);
   };
 
+  const handleLogout = () => {
+    localStorage.removeItem("token");
+    localStorage.removeItem("userId");
+    setIsLoggedIn(false);
+    navigate("/");
+  };
+
   return (
     <header className="header">
       <div className="header-content">
+        {/* Language Buttons */}
         <div>
-          <nav>
+          <nav className="d-flex">
             <button
               className="language-button"
               onClick={() => switchLanguage("en")}
@@ -30,15 +46,50 @@ const Header = () => {
             </button>
           </nav>
         </div>
+
+        {/* Title */}
         <h1>{t("header.title")}</h1>
 
+        {/* Auth Buttons */}
         <div className="auth-buttons">
-          <button className="auth-button">{t("header.login")}</button>
-          <button className="auth-button" onClick={() => navigate("/register")}>
-            {t("header.register")}
-          </button>{" "}
+          <button className="home-button" onClick={() => navigate("/")}>
+            🏠︎
+          </button>
+          {isLoggedIn ? (
+            <>
+              <button
+                className="auth-button"
+                onClick={() => setShowProfileModal(true)}
+              >
+                {t("header.profile")}
+              </button>
+              <button className="auth-button" onClick={handleLogout}>
+                {t("header.logout")}
+              </button>
+            </>
+          ) : (
+            <>
+              <button
+                className="auth-button"
+                onClick={() => navigate("/login")}
+              >
+                {t("header.login")}
+              </button>
+              <button
+                className="auth-button"
+                onClick={() => navigate("/register")}
+              >
+                {t("header.register")}
+              </button>
+            </>
+          )}
         </div>
       </div>
+
+      {/* Profile Modal */}
+      {showProfileModal && (
+        <ProfileModal onClose={() => setShowProfileModal(false)} />
+      )}
     </header>
   );
 };

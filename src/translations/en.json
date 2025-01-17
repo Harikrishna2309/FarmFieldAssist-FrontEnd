@@ -2,7 +2,9 @@
   "header": {
     "title": "Farm Field Assist",
     "login": "Login",
-    "register": "Register"
+    "register": "Register",
+    "profile": "Profile",
+    "logout": "Logout"
   },
   "footer": {
     "copyright": "© 2025 Farm Field Assist. All Rights Reserved.",
@@ -32,6 +34,54 @@
     "submit": "Submit",
     "success": "Registration successful!",
     "error": "Registration failed. Please try again."
+  },
+  "login": {
+    "title": "Login",
+    "email": "Email",
+    "password": "Password",
+    "submit": "Login",
+    "success": "Login successful!",
+    "failure": "Invalid email or password."
+  },
+  "userhome": {
+    "title": "Farmer Dashboard",
+    "activeWorks": "Active Works",
+    "pastWorks": "Past Works",
+    "noActiveWorks": "No active works available.",
+    "noPastWorks": "No past works available.",
+    "addWork": "Add Work",
+    "loading": "Loading works...",
+    "errorLoadingWorks": "Error loading works. Please try again later.",
+    "location": "Location",
+    "direction": "Directions"
+  },
+  "addWork": {
+    "title": "Add Work",
+    "form": {
+      "title": "Work Title",
+      "description": "Work Description",
+      "location": "Location",
+      "direction": "Directions (Google Maps Link)",
+      "status": "Status",
+      "submit": "Add Work"
+    },
+    "status": {
+      "active": "Active",
+      "inactive": "Inactive"
+    },
+    "success": "Work added successfully!",
+    "error": "Failed to add work. Please try again."
+  },
+  "profile": {
+    "title": "Edit Profile",
+    "name": "Name",
+    "email": "Email",
+    "phone": "Phone",
+    "alterPhone": "Alternate Phone",
+    "update": "Update",
+    "close": "Close",
+    "success": "Profile updated successfully!",
+    "error": "Failed to update profile."
   }
   
   

@@ -5,6 +5,9 @@ import Header from "./components/Header";
 import Footer from "./components/Footer";
 import "./styles/App.css";
 import Register from "./pages/Register";
+import Login from "./pages/Login";
+import UserHome from "./pages/UserHome";
+import AddWork from "./pages/AddWork";
 
 const App = () => {
   return (
@@ -13,6 +16,9 @@ const App = () => {
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/register" element={<Register/>} />
+        <Route path="/login" element={<Login/>}/>
+        <Route path="/userhome" element={<UserHome/>}/>
+        <Route path="/add-work" element={<AddWork/>}/>
       </Routes>
       <Footer/>
     </Router>

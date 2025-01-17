@@ -1,0 +1,59 @@
+.add-work-container {
+    max-width: 600px;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: #f9f9f9;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  }
+  
+  .add-work-form {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+  }
+  
+  .add-work-form label {
+    font-weight: bold;
+  }
+  
+  .add-work-form input,
+  .add-work-form textarea,
+  .add-work-form select {
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 14px;
+  }
+  
+  .add-work-form textarea {
+    resize: vertical;
+    min-height: 80px;
+  }
+  
+  .submit-button {
+    background-color: #28a745;
+    color: white;
+    padding: 10px 15px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 16px;
+  }
+  
+  .submit-button:hover {
+    background-color: #218838;
+  }
+  
+  .success-message {
+    color: #28a745;
+    font-weight: bold;
+    margin-top: 10px;
+  }
+  
+  .error-message {
+    color: #dc3545;
+    font-weight: bold;
+    margin-top: 10px;
+  }
+  
