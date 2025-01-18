@@ -27,7 +27,7 @@ const ProfileModal = ({ onClose }) => {
     }
 
     axios
-      .post(
+      .put(
         `${apiConfig.apiHost}/updateuser?id=${userId}`,
         formData,
         {

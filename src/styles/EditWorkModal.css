@@ -1,0 +1,113 @@
+/* Modal Overlay */
+.modal-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 1000;
+  }
+  
+  /* Modal Content */
+  .modal-content {
+    background: #ffffff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
+    width: 90%;
+    max-width: 500px;
+    box-sizing: border-box;
+    animation: fadeIn 0.3s ease-in-out;
+  }
+  
+  /* Form Elements */
+  .edit-work-form label {
+    display: block;
+    font-size: 1rem;
+    font-weight: bold;
+    margin-bottom: 5px;
+    color: #333;
+  }
+  
+  .edit-work-form input,
+  .edit-work-form textarea,
+  .edit-work-form select {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 1rem;
+    box-sizing: border-box;
+  }
+  
+  .edit-work-form textarea {
+    resize: none;
+    height: 80px;
+  }
+  
+  .edit-work-form select {
+    background: #fff;
+    appearance: none;
+  }
+  
+  /* Modal Actions */
+  .modal-actions {
+    display: flex;
+    justify-content: flex-end;
+    gap: 10px;
+  }
+  
+  .modal-actions button {
+    padding: 10px 15px;
+    border: none;
+    border-radius: 4px;
+    font-size: 1rem;
+    cursor: pointer;
+  }
+  
+  .modal-actions button:first-child {
+    background: #4caf50;
+    color: #fff;
+  }
+  
+  .modal-actions button:last-child {
+    background: #f44336;
+    color: #fff;
+  }
+  
+  /* Responsive Design */
+  @media screen and (max-width: 768px) {
+    .modal-content {
+      padding: 15px;
+      width: 95%;
+    }
+  
+    .edit-work-form input,
+    .edit-work-form textarea,
+    .edit-work-form select {
+      font-size: 0.9rem;
+    }
+  
+    .modal-actions button {
+      font-size: 0.9rem;
+      padding: 8px 12px;
+    }
+  }
+  
+  /* Keyframe Animation */
+  @keyframes fadeIn {
+    from {
+      opacity: 0;
+      transform: translateY(-20px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+  

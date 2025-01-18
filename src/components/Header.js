@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 import { useTranslation } from "react-i18next";
 import { useNavigate } from "react-router-dom";
 import "../styles/Header.css";
-import ProfileModal from "../pages/ProfileModal"; // Import a Profile Modal for editing user details
+import ProfileModal from "../pages/ProfileModal";
 
 const Header = () => {
   const { t, i18n } = useTranslation();
@@ -23,7 +23,15 @@ const Header = () => {
     localStorage.removeItem("token");
     localStorage.removeItem("userId");
     setIsLoggedIn(false);
-    navigate("/");
+    navigate("/"); // Navigate to home on logout
+  };
+
+  const handleHomeClick = () => {
+    if (isLoggedIn) {
+      navigate("/userhome"); // Navigate to "userhome" if logged in
+    } else {
+      navigate("/"); // Navigate to home if logged out
+    }
   };
 
   return (
@@ -52,7 +60,7 @@ const Header = () => {
 
         {/* Auth Buttons */}
         <div className="auth-buttons">
-          <button className="home-button" onClick={() => navigate("/")}>
+          <button className="home-button" onClick={handleHomeClick}>
             🏠︎
           </button>
           {isLoggedIn ? (

@@ -3,6 +3,7 @@ import axios from "axios";
 import { useTranslation } from "react-i18next";
 import "../styles/UserHome.css";
 import apiConfig from "../config/apiConfig";
+import EditWorkModal from "./EditWorkModal";
 
 const UserHome = () => {
   const { t } = useTranslation();
@@ -10,40 +11,53 @@ const UserHome = () => {
   const [inactiveWorks, setInactiveWorks] = useState([]);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState("");
+  const [isEditModalOpen, setIsEditModalOpen] = useState(false);
+  const [selectedWork, setSelectedWork] = useState(null);
 
-  // Fetch active and inactive works
-  useEffect(() => {
+  const fetchWorks = async () => {
     const farmerId = localStorage.getItem("userId");
     const token = localStorage.getItem("token");
+    try {
+      setLoading(true);
+      const headers = { Authorization: `Bearer ${token}` };
+      const activeResponse = await axios.get(
+        `${apiConfig.apiHost}/farmer/active?farmerId=${farmerId}`,
+        { headers }
+      );
+      const inactiveResponse = await axios.get(
+        `${apiConfig.apiHost}/farmer/inactive?farmerId=${farmerId}`,
+        { headers }
+      );
 
-    const fetchWorks = async () => {
-      try {
-        setLoading(true);
-        const headers = {
-            Authorization: `Bearer ${token}`, // Add the Bearer token
-          };
-        const activeResponse = await axios.get(
-          `${apiConfig.apiHost}/farmer/active?farmerId=${farmerId}`,{ headers }
-        );
-        const inactiveResponse = await axios.get(
-          `${apiConfig.apiHost}/farmer/inactive?farmerId=${farmerId}`,{ headers }
-        );
+      setActiveWorks(activeResponse.data.data || []);
+      setInactiveWorks(inactiveResponse.data.data || []);
+      setLoading(false);
+    } catch (err) {
+      setError(t("home.errorLoadingWorks"));
+      setLoading(false);
+    }
+  };
 
-        setActiveWorks(activeResponse.data.data || []);
-        setInactiveWorks(inactiveResponse.data.data || []);
-        setLoading(false);
-      } catch (err) {
-        setError(t("home.errorLoadingWorks"));
-        setLoading(false);
-      }
-    };
-
+  useEffect(() => {
     fetchWorks();
-  }, [t]);
+  },[t]);
 
-  // Handle Add Work navigation
+  const handleEditClick = (work) => {
+    setSelectedWork(work);
+    setIsEditModalOpen(true);
+  };
+
+  const handleEditModalClose = () => {
+    setIsEditModalOpen(false);
+    setSelectedWork(null);
+  };
+
+  const handleWorkUpdate = () => {
+    fetchWorks(); // Refresh the works after edit
+  };
+
   const handleAddWork = () => {
-    window.location.href = "/add-work"; // Replace with React Router navigation if applicable
+    window.location.href = "/add-work";
   };
 
   return (
@@ -75,6 +89,12 @@ const UserHome = () => {
                     <a href={work.direction} target="_blank" rel="noopener noreferrer">
                       {t("userhome.direction")}
                     </a>
+                    <button
+                      className="edit-button"
+                      onClick={() => handleEditClick(work)}
+                    >
+                      {t("userhome.edit")}
+                    </button>
                   </li>
                 ))}
               </ul>
@@ -97,6 +117,12 @@ const UserHome = () => {
                     <a href={work.direction} target="_blank" rel="noopener noreferrer">
                       {t("userhome.direction")}
                     </a>
+                    <button
+                      className="edit-button"
+                      onClick={() => handleEditClick(work)}
+                    >
+                      {t("userhome.edit")}
+                    </button>
                   </li>
                 ))}
               </ul>
@@ -105,6 +131,14 @@ const UserHome = () => {
             )}
           </section>
         </div>
+      )}
+
+      {isEditModalOpen && (
+        <EditWorkModal
+          work={selectedWork}
+          onClose={handleEditModalClose}
+          onSave={handleWorkUpdate}
+        />
       )}
     </div>
   );
