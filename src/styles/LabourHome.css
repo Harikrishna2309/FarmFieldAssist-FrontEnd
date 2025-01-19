@@ -1,0 +1,139 @@
+/* General Styles */
+.home-page {
+    font-family: Arial, sans-serif;
+    padding: 20px;
+    margin: 0 auto;
+    max-width: 1200px;
+    background-color: #f9f9f9;
+  }
+  
+  .home-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #4caf50;
+    color: #fff;
+    padding: 15px;
+    border-radius: 5px;
+    margin-bottom: 20px;
+  }
+  
+  .home-header h2 {
+    margin: 0;
+    font-size: 24px;
+  }
+  
+  /* Work Section */
+  .work-section {
+    margin-bottom: 20px;
+  }
+  
+  .work-section h3 {
+    font-size: 20px;
+    margin-bottom: 10px;
+    color: #333;
+  }
+  
+  .work-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+  
+  .work-item {
+    background-color: #fff;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    padding: 15px;
+    margin-bottom: 10px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  }
+  
+  .work-item h4 {
+    font-size: 18px;
+    margin-bottom: 5px;
+    color: #333;
+  }
+  
+  .work-item p {
+    font-size: 14px;
+    margin: 5px 0;
+    color: #666;
+  }
+  
+  .work-item a {
+    display: inline-block;
+    margin-top: 10px;
+    color: #4caf50;
+    text-decoration: none;
+    font-weight: bold;
+  }
+  
+  .work-item a:hover {
+    text-decoration: underline;
+  }
+  
+  /* Responsive Design */
+  @media (max-width: 768px) {
+    .home-header {
+      flex-direction: column;
+      align-items: flex-start;
+    }
+  
+    .home-header h2 {
+      font-size: 20px;
+      margin-bottom: 10px;
+    }
+  
+    .work-item {
+      padding: 10px;
+    }
+  
+    .work-item h4 {
+      font-size: 16px;
+    }
+  
+    .work-item p {
+      font-size: 13px;
+    }
+  }
+  
+  @media (max-width: 480px) {
+    .home-header h2 {
+      font-size: 18px;
+    }
+  
+    .work-item h4 {
+      font-size: 14px;
+    }
+  
+    .work-item p {
+      font-size: 12px;
+    }
+  
+    .work-item a {
+      font-size: 12px;
+    }
+  }
+  .search-work-button,
+  .interest-button {
+    background-color: #4caf50;
+    color: #fff;
+    border: none;
+    padding: 10px 15px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 14px;
+    margin-top: 10px;
+  }
+  
+  .search-work-button:hover,
+  .interest-button:hover {
+    background-color: #45a049;
+  }
+  
+  .search-work-button:focus,
+  .interest-button:focus {
+    outline: none;
+  }
+    

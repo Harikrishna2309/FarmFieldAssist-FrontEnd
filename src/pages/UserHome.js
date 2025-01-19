@@ -4,6 +4,7 @@ import { useTranslation } from "react-i18next";
 import "../styles/UserHome.css";
 import apiConfig from "../config/apiConfig";
 import EditWorkModal from "./EditWorkModal";
+import LabourInterestModal from "./LabourInterestModal";
 
 const UserHome = () => {
   const { t } = useTranslation();
@@ -12,7 +13,9 @@ const UserHome = () => {
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState("");
   const [isEditModalOpen, setIsEditModalOpen] = useState(false);
+  const [isLabourModalOpen, setIsLabourModalOpen] = useState(false);
   const [selectedWork, setSelectedWork] = useState(null);
+  const [selectedLabourWorkId, setSelectedLabourWorkId] = useState(null);
 
   const fetchWorks = async () => {
     const farmerId = localStorage.getItem("userId");
@@ -40,16 +43,26 @@ const UserHome = () => {
 
   useEffect(() => {
     fetchWorks();
-  },[t]);
+  }, [t]);
 
   const handleEditClick = (work) => {
     setSelectedWork(work);
     setIsEditModalOpen(true);
   };
 
+  const handleLabourInterestClick = (workId) => {
+    setSelectedLabourWorkId(workId);
+    setIsLabourModalOpen(true);
+  };
+
   const handleEditModalClose = () => {
     setIsEditModalOpen(false);
     setSelectedWork(null);
+  };
+
+  const handleLabourModalClose = () => {
+    setIsLabourModalOpen(false);
+    setSelectedLabourWorkId(null);
   };
 
   const handleWorkUpdate = () => {
@@ -95,6 +108,12 @@ const UserHome = () => {
                     >
                       {t("userhome.edit")}
                     </button>
+                    <button
+                      className="view-interest-button"
+                      onClick={() => handleLabourInterestClick(work.id)}
+                    >
+                      {t("userhome.viewInterests")}
+                    </button>
                   </li>
                 ))}
               </ul>
@@ -117,12 +136,6 @@ const UserHome = () => {
                     <a href={work.direction} target="_blank" rel="noopener noreferrer">
                       {t("userhome.direction")}
                     </a>
-                    <button
-                      className="edit-button"
-                      onClick={() => handleEditClick(work)}
-                    >
-                      {t("userhome.edit")}
-                    </button>
                   </li>
                 ))}
               </ul>
@@ -138,6 +151,13 @@ const UserHome = () => {
           work={selectedWork}
           onClose={handleEditModalClose}
           onSave={handleWorkUpdate}
+        />
+      )}
+
+      {isLabourModalOpen && (
+        <LabourInterestModal
+          workId={selectedLabourWorkId}
+          onClose={handleLabourModalClose}
         />
       )}
     </div>

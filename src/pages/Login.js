@@ -27,13 +27,17 @@ const Login = () => {
       const response = await axios.post(`${apiConfig.apiHost}/login`, formData);
       if (response.data.success) {
         setMessage(t("login.success"));
-        // Save token in localStorage or use it for further requests
         localStorage.setItem("token", response.data.token);
         localStorage.setItem("userId", response.data.id);
-        localStorage.setItem("role",response.data.role);
-        navigate("/userhome");
+        localStorage.setItem("role", response.data.role);
+  
+        // Navigate based on role
+        if (response.data.role === 0) {
+          navigate("/userhome"); // Farmer home
+        } else if (response.data.role === 1) {
+          navigate("/labourhome"); // Labour home
+        }
         window.location.reload(); 
-
       } else {
         setMessage(t("login.failure"));
       }
@@ -41,6 +45,7 @@ const Login = () => {
       setMessage(t("login.failure"));
     }
   };
+  
 
   return (
     <div className="login-page">

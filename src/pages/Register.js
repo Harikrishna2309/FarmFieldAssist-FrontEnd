@@ -118,7 +118,7 @@ const Register = () => {
             />
           </div>
 
-          <div className="form-group">
+          {/* <div className="form-group">
             <label>{t("register.cost")}</label>
             <input
               type="number"
@@ -126,7 +126,7 @@ const Register = () => {
               value={formData.cost}
               onChange={handleChange}
             />
-          </div>
+          </div> */}
 
           <div className="form-group">
             <label>{t("register.age")}</label>
@@ -147,8 +147,8 @@ const Register = () => {
               required
             >
               <option value="">{t("register.select_role")}</option>
-              <option value="1">{t("register.farmer")}</option>
-              <option value="2">{t("register.labourer")}</option>
+              <option value="farmer">{t("register.farmer")}</option>
+              <option value="labour">{t("register.labourer")}</option>
             </select>
           </div>
 

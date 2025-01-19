@@ -44,17 +44,26 @@
     "failure": "Invalid email or password."
   },
   "userhome": {
-    "title": "Farmer Dashboard",
-    "activeWorks": "Active Works",
-    "pastWorks": "Past Works",
-    "noActiveWorks": "No active works available.",
-    "noPastWorks": "No past works available.",
+    "title": "Welcome to User Home",
     "addWork": "Add Work",
     "loading": "Loading works...",
-    "errorLoadingWorks": "Error loading works. Please try again later.",
+    "activeWorks": "Active Works",
+    "pastWorks": "Past Works",
+    "noActiveWorks": "No active works found.",
+    "noPastWorks": "No past works found.",
     "location": "Location",
-    "direction": "Directions",
-    "edit": "Edit"
+    "direction": "Direction",
+    "edit": "Edit",
+    "viewInterests": "View Interests",
+    "interestsTitle": "Labour Interests",
+    "labourName": "Name",
+    "labourEmail": "Email",
+    "labourPhone": "Phone",
+    "labourCost": "Cost",
+    "labourAge": "Age",
+    "accept": "Accept",
+    "reject": "Reject",
+    "noInterests": "No interests available for this work."
   },
   "addWork": {
     "title": "Add Work",
@@ -97,6 +106,24 @@
     "cancelButton": "Cancel",
     "errorUpdate": "Failed to update the work.",
     "errorOccurred": "An error occurred while updating the work."
+  },
+  "labourHome": {
+    "title": "Labour Dashboard",
+    "searchWork": "Search Work",
+    "acceptedWorks": "Accepted Works",
+    "otherWorks": "Other Interested Works",
+    "allWorks": "All Works",
+    "location": "Location",
+    "direction": "Direction",
+    "loading": "Loading...",
+    "errorLoading": "Error loading works",
+    "errorLoadingAllWorks": "Error loading all works",
+    "noAcceptedWorks": "No accepted works yet.",
+    "noOtherWorks": "No other interested works.",
+    "noAllWorks": "No works available.",
+    "showInterest": "Show Interest",
+    "interestSuccess": "Interest expressed successfully!",
+    "interestFailure": "Failed to express interest."
   }
   
   

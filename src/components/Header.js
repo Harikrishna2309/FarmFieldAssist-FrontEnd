@@ -12,7 +12,7 @@ const Header = () => {
 
   useEffect(() => {
     const token = localStorage.getItem("token");
-    setIsLoggedIn(!!token); 
+    setIsLoggedIn(!!token);
   }, []);
 
   const switchLanguage = (lang) => {
@@ -22,13 +22,19 @@ const Header = () => {
   const handleLogout = () => {
     localStorage.removeItem("token");
     localStorage.removeItem("userId");
+    localStorage.removeItem("role"); // Remove role on logout
     setIsLoggedIn(false);
     navigate("/"); // Navigate to home on logout
   };
 
   const handleHomeClick = () => {
+    const role = localStorage.getItem("role"); // Retrieve the role
     if (isLoggedIn) {
-      navigate("/userhome"); // Navigate to "userhome" if logged in
+      if (role === "0") {
+        navigate("/userhome"); // Navigate to "userhome" if role is 0
+      } else if (role === "1") {
+        navigate("/labourhome"); // Navigate to "labourhome" if role is 1
+      }
     } else {
       navigate("/"); // Navigate to home if logged out
     }
